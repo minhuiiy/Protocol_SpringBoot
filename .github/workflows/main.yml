@@ -20,11 +20,11 @@ jobs:
       # 3. Build Docker Image
       - name: Build Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/mhuy/duaanjava:latest .
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/mhuy/duaanjava:${{ github.sha }} .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/duaanjava:latest .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/duaanjava:${{ github.sha }} .
 
       # 4. Push Image lên Docker Hub
       - name: Push Docker Image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/mhuy/duaanjava:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/mhuy/duaanjava:${{ github.sha }}
+          docker push ${{ secrets.DOCKER_USERNAME }}/duaanjava:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/duaanjava:${{ github.sha }}
